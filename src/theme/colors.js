@@ -1,0 +1,20 @@
+export const label_color = 'rgba(0, 0, 0, 0.6)';
+export const modal_bg = 'rgba(0, 0, 0, 0.4)';
+export const body_color = '#E5E5E5';
+export const white = '#FFFFFF';
+export const black = '#000000';
+
+export const dark_primary_color = '#FFC107';
+export const default_primary_color = '#FFDB5B';
+export const light_primary_color = '#FFECB3';
+export const text_primary_color = '#333333';
+export const accent_color = '#27AE60';
+export const header_text_color = '#FFFFFF';
+export const primary_text_color = '#EFB400';
+export const secondary_text_color = '#757575';
+export const divider_color = '#BDBDBD';
+export const off_white = '#E5E5E5';
+export const dash_back = '#FFFCF3';
+export const gray_1 = '#333333';
+export const gray_2 = '#4F4F4F';
+export const gray_3 = '#828282';
