@@ -1,12 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  FlatList,
-  StyleSheet,
-  TextInput,
-} from 'react-native';
+import {View, Text, TouchableOpacity, FlatList, TextInput} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 
 import {loadingHandler} from '../../common/ReduxLoader';
@@ -14,6 +7,7 @@ import {NavigationService, routes} from '../../navigation';
 import {FETCH_POSTS_REQUEST} from '../store/action-types';
 import {fetchPostsRequest} from '../store/actions';
 import {Loader} from '../../components';
+import {styles} from './style';
 
 const Posts = (props) => {
   const dispatch = useDispatch();
@@ -72,34 +66,12 @@ const Posts = (props) => {
         renderItem={renderItem}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.contentContainer}
+        onRefresh={() => dispatch(fetchPostsRequest())}
+        refreshing={loading}
       />
       <Loader isVisible={loading} />
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  contentContainer: {paddingHorizontal: 15},
-  itemBody: {fontWeight: '400', color: 'gray'},
-  itemContainer: {
-    backgroundColor: 'white',
-    marginVertical: 5,
-    padding: 10,
-    shadowColor: '#000',
-    shadowOffset: {width: 1, height: 2},
-    shadowOpacity: 0.4,
-    shadowRadius: 1,
-    elevation: 10,
-  },
-  itemTitle: {fontWeight: 'bold', fontSize: 15, marginBottom: 5},
-  searchInput: {
-    borderColor: 'lightgrey',
-    borderWidth: 1,
-    borderRadius: 15,
-    margin: 15,
-    paddingHorizontal: 15,
-    backgroundColor: 'white',
-  },
-});
 
 export default Posts;
